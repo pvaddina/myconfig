@@ -1,3 +1,5 @@
+execute pathogen#infect()
+
 set nocompatible
 source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
@@ -27,6 +29,15 @@ function MyDiff()
   endif
   silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
 endfunction
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""  Switch off annoying Alarm bells
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set noerrorbells visualbell t_vb=
+if has('autocmd')
+  autocmd GUIEnter * set visualbell t_vb=
+endif
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""  White spaces (Project settings) 
