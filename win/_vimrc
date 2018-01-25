@@ -55,6 +55,21 @@ set expandtab       " Expand TABs to spaces
 
 set hlsearch        " highligh searched text string
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""  No backup files (prevent creation of *.*~ files)
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set nobackup
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""  Do not create a swap file
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set noswapfile
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""  Do not create any undo files (prevent creation of *.un~ files)
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set noundofile
+
+
+
 
 " Search for selected text, forwards or backwards.
 " THIS IS FINALLY REALIZED WITH A plugin "vsearch.vim"
@@ -86,6 +101,17 @@ set hlsearch        " highligh searched text string
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " For meaningful results try between 100 - 200
 set lines=45 columns=180
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""  Color of the cursor
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" src: http://vim.wikia.com/wiki/Configuring_the_cursor
+" !!!!!!!!!!!!!!!!!! DOES NOT WORK !!!!!!!!!!!!!!!!!!!
+" 1. Color for Normal, Visual and Command modes
+highlight Cursor guifg=red guibg=red
+" 2. Color for Insert modes
+highlight iCursor guifg=red guibg=red
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
