@@ -1,0 +1,123 @@
+execute pathogen#infect()
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""  White spaces (Project settings) 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set tabstop=2       " The width of a TAB is set to 4. 
+                    " Still it is a \t. It is just that 
+                    " Vim will interpret it to be having 
+                    " a width of 4. 
+set shiftwidth=2    " Indents will have a width of 4 
+set softtabstop=2   " Sets the number of columns for a TAB 
+set expandtab       " Expand TABs to spaces
+set hlsearch        " highligh searched text string
+
+" Search for selected text, forwards or backwards.
+" THIS IS FINALLY REALIZED WITH A plugin "vsearch.vim"
+" THE FOLLOWING ITEMS ARE ONLY FOR REFERENCE
+" 
+" Version-1;
+" This simple mapping below will map the key combination //
+" to search for the text in the current documentation
+" vnoremap <expr> // 'y/\V'.escape(@",'\').'<CR>'
+
+"
+" Version-2: NOT WORKING
+" This complex mapping should allow searching for the text using the
+" same key command as a single word. 
+"vnoremap <silent> * :<C-U>
+"  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
+"  \gvy/<C-R><C-R>=substitute(
+"  \escape(@", '/\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
+"  \gV:call setreg('"', old_reg, old_regtype)<CR>
+"vnoremap <silent> # :<C-U>
+"  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
+"  \gvy?<C-R><C-R>=substitute(
+"  \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
+"  \gV:call setreg('"', old_reg, old_regtype)<CR>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""  Minimum window size
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" For meaningful results try between 100 - 200
+set lines=45 columns=180
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""  Minimum window size
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Set gui font
+" set guifont=Monaco\ 20
+" set guifont=Consolas\ 10
+set guifont=Monospace\ 10
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""   Search
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Set the current path of the buffer as the search path
+nmap <F2> :lcd %:p:h<CR> 
+" Set the current path to the buffer that is open and then search for the
+" string 
+nmap <F3> <F2>"zyiw:exec "vim ".@z." ** %"<CR>
+" Open the next buffer
+nmap <F4> :cn<CR>
+" Open the last buffer
+nmap <S-F4> :cN<CR>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""   Tagbar
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Tagbar: Configuration
+nmap <F8> :TagbarToggle<CR>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""   Color themes
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 1. Solarized
+" ------------
+" For lighter mode set 'background' to 'light'
+" For dark mode set 'background' to 'dark'
+"  For more info: https://github.com/altercation/vim-colors-solarized
+" set background=dark
+"let g:solarized_termtrans=1
+"let g:solarized_termcolors=256
+"let g:solarized_contrast="high"
+"let g:solarized_visibility="high"
+"colorscheme solarized
+"
+" 2. Solarized
+" ------------
+"colorscheme elflord
+"
+" 3. Dracula
+" ------------
+syntax on
+colorscheme dracula
+let g:dracula_italic = 1
+
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""   NERDTree
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Commands to start some plugins automatically
+" autocmd vimenter * NERDTree
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" Keyboard mapping
+" map :NT :NERDTree
+map <C-n> :NERDTree<CR>
+
+" Keyboard mapping to sync the NERTTree structure to show the buffer that is
+" open at the moment
+map <C-t><C-f> :NERDTreeFind<CR>
+
+let NERDTreeShowBookmarks=1
+
+
