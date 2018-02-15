@@ -115,6 +115,14 @@ highlight iCursor guifg=red guibg=red
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""  Color of the highlighted text 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" src: https://stackoverflow.com/questions/7103173/vim-how-to-change-the-highlight-color-for-search-hits-and-quickfix-selection
+"
+" Change the color of the highlighted text to purple
+highlight Search guibg='Purple' guifg='NONE'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""  Minimum window size
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set gui font
