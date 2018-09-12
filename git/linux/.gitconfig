@@ -1,0 +1,69 @@
+[user]
+	name = Prakash Rao Vaddina
+	email = Prakash-Rao.Vaddina@rohde-schwarz.com
+[push]
+	default = simple
+[core]
+	autocrlf = true
+	safecrlf = false
+	editor = gvim
+
+
+[color]
+    ui = true
+
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+
+[color "status"]
+    added = yellow
+    changed = cyan
+    untracked = red
+
+
+
+[http]
+	sslCAInfo = /media/sf_d/linux-share/merged-ca-bundle-git-and-rs.crt
+	proxy = http://vaddina@proxy-emea.rsint.net:80
+
+[credential]
+	helper = cache --timeout=8553600
+
+
+[diff]
+	tool = gvimdiff
+
+[difftool "bc"]
+    path = "/mnt/c/Program Files/Beyond Compare 4/bcomp.exe"
+
+[difftool "gvimdiff"]
+    cmd = "/usr/bin/gvim -c 'set columns=200' -c 'wincmd =' -d" "$LOCAL" "$REMOTE" 
+[difftool]
+    prompt = false
+
+
+
+[merge]
+    tool = bc 
+
+[mergetool "bc"]
+    path = "/mnt/c/Program Files/Beyond Compare 4/bcomp.exe"
+
+
+
+[alias]
+    d = difftool
+    mdbc = config --global diff.tool bc
+    mdgvim = config --global diff.tool gvimdiff
+    mmbc = config --global merge.tool bc
+    cb = clone https://code.rsint.net/MRT-SCM-BASE/mrt.base.fsw.git
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue) <%an>%Creset' --abbrev-commit 
+

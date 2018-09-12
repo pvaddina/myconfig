@@ -1,0 +1,74 @@
+[user]
+	name = Prakash Rao Vaddina
+	email = Prakash-Rao.Vaddina@rohde-schwarz.com
+[push]
+	default = simple
+[core]
+	autocrlf = true
+	safecrlf = false
+	editor = 'c:/Program Files (x86)/Vim/vim81/gvim.exe'
+
+
+[color]
+    ui = true
+
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+
+[color "status"]
+    added = yellow
+    changed = cyan
+    untracked = red
+
+
+
+[http]
+	sslCAInfo = c:/Users/vaddina/certs/merged-ca-bundle-git-and-rs.crt
+	proxy = http://vaddina@proxy-emea.rsint.net:80
+
+[credential]
+	helper = wincred
+
+
+
+[diff]
+	tool = bc
+
+[difftool "bc"]
+    path = "C:/Program Files/Beyond Compare 4/bcomp.exe"
+
+[difftool "gvimdiff"]
+    cmd = 'c:/Program Files (x86)/Vim/vim81/gvim.exe' -d \"$LOCAL\" \"$REMOTE\"
+
+[difftool "sourcetree"]
+	cmd = 'C:/Program Files/Beyond Compare 4/BComp.exe' \"$LOCAL\" \"$REMOTE\"
+[difftool]
+    prompt = false
+
+
+
+[merge]
+    tool = bc 
+
+[mergetool "bc"]
+    path = "C:/Program Files/Beyond Compare 4/bcomp.exe"
+
+
+
+[alias]
+    d = difftool
+    mdbc = config --global diff.tool bc
+    mdgvim = config --global diff.tool gvimdiff
+    mdvim = config --global diff.tool vimdiff
+    mmbc = config --global merge.tool bc
+    cb = clone https://code.rsint.net/MRT-SCM-BASE/mrt.base.fsw.git
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset %C(bold blue)%<(25) %an%Creset %Cgreen%<(16)%cr%Creset %C(yellow)%d%Creset %<(100,trunc)%s' --abbrev-commit 
+
