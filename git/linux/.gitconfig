@@ -4,7 +4,7 @@
 [push]
 	default = simple
 [core]
-	autocrlf = true
+	autocrlf = input
 	safecrlf = false
 	editor = gvim
 
@@ -52,7 +52,7 @@
 
 
 [merge]
-    tool = bc 
+    tool = gvim 
 
 [mergetool "bc"]
     path = "/mnt/c/Program Files/Beyond Compare 4/bcomp.exe"
@@ -65,5 +65,5 @@
     mdgvim = config --global diff.tool gvimdiff
     mmbc = config --global merge.tool bc
     cb = clone https://code.rsint.net/MRT-SCM-BASE/mrt.base.fsw.git
-    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue) <%an>%Creset' --abbrev-commit 
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset %C(bold blue)%<(25) %an%Creset %Cgreen%<(16)%cr%Creset %C(yellow)%d%Creset %<(100,trunc)%s' --abbrev-commit 
 

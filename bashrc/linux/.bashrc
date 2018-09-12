@@ -49,7 +49,13 @@ UC=$COLOR_WHITE               # user's color
 # vaddina /home/vaddina  
 # → gvim ~/.bashrc 
 # 
-PS1="\n\[${COLOR_LIGHT_BLUE}\]\${PWD} \[${COLOR_LIGHT_GREEN}\]→\[${COLOR_NC}\] "  
+parse_git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+#export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
+
+PS1="\n\[${COLOR_LIGHT_BLUE}\]\${PWD}\[\033[33m\]\$(parse_git_branch)\[\033[00m\] \[${COLOR_LIGHT_GREEN}\]→\[${COLOR_NC}\] "  
 
 
 ###########################################################################
@@ -145,3 +151,8 @@ alias ll='ls -halF'
 alias grep="grep --color=auto"
 alias fgrep="fgrep --color=auto"
 alias egrep="egrep --color=auto"
+
+###########################################################################
+# Display configuration for graphical applications
+###########################################################################
+export DISPLAY=:0
