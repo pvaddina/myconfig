@@ -6,64 +6,46 @@
 [core]
 	autocrlf = input
 	safecrlf = false
-	editor = gvim
-
-
+	editor = vi
 [color]
-    ui = true
-
+	ui = true
 [color "branch"]
-    current = yellow reverse
-    local = yellow
-    remote = green
-
+	current = yellow reverse
+	local = yellow
+	remote = green
 [color "diff"]
-    meta = yellow bold
-    frag = magenta bold
-    old = red bold
-    new = green bold
-
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
 [color "status"]
-    added = yellow
-    changed = cyan
-    untracked = red
-
-
-
+	added = yellow
+	changed = cyan
+	untracked = red
 [http]
 	sslCAInfo = /media/sf_d/linux-share/merged-ca-bundle-git-and-rs.crt
 	proxy = http://vaddina@proxy-emea.rsint.net:80
-
 [credential]
 	helper = cache --timeout=8553600
-
-
 [diff]
 	tool = gvimdiff
-
+	guitool = kdiff3
 [difftool "bc"]
-    path = "/mnt/c/Program Files/Beyond Compare 4/bcomp.exe"
-
+	path = /mnt/c/Program Files/Beyond Compare 4/bcomp.exe
 [difftool "gvimdiff"]
-    cmd = "/usr/bin/gvim -c 'set columns=200' -c 'wincmd =' -d" "$LOCAL" "$REMOTE" 
+	cmd = /usr/bin/gvim -c 'set columns=200' -c 'wincmd =' -d$LOCAL$REMOTE
 [difftool]
-    prompt = false
-
-
-
+	prompt = false
 [merge]
-    tool = gvim 
-
+	tool = /usr/bin/gvim
 [mergetool "bc"]
-    path = "/mnt/c/Program Files/Beyond Compare 4/bcomp.exe"
-
-
-
+	path = /mnt/c/Program Files/Beyond Compare 4/bcomp.exe
 [alias]
-    d = difftool
-    mdbc = config --global diff.tool bc
-    mdgvim = config --global diff.tool gvimdiff
-    mmbc = config --global merge.tool bc
-    cb = clone https://code.rsint.net/MRT-SCM-BASE/mrt.base.fsw.git
-    lg = log --color --graph --pretty=format:'%Cred%h%Creset %C(bold blue)%<(25) %an%Creset %Cgreen%<(16)%cr%Creset %C(yellow)%d%Creset %<(100,trunc)%s' --abbrev-commit 
-
+	d = difftool
+	mdbc = config --global diff.tool bc
+	mdgvim = config --global diff.tool gvimdiff
+	mmbc = config --global merge.tool bc
+	cb = clone https://code.rsint.net/MRT-SCM-BASE/mrt.base.fsw.git
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset %C(bold blue)%<(25) %an%Creset %Cgreen%<(16)%cr%Creset %C(yellow)%d%Creset %<(100,trunc)%s' --abbrev-commit
+[difftool "kdiff3"]
+	path = /usr/bin/kdiff3

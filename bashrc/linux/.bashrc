@@ -55,7 +55,7 @@ parse_git_branch() {
 
 #export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
 
-PS1="\n\[${COLOR_LIGHT_BLUE}\]\${PWD}\[\033[33m\]\$(parse_git_branch)\[\033[00m\] \[${COLOR_LIGHT_GREEN}\]→\[${COLOR_NC}\] "  
+PS1="\n\[${COLOR_LIGHT_BLUE}\]\${PWD}\[\033[33m\]\$(parse_git_branch)\[\033[00m\] \n\[${COLOR_LIGHT_GREEN}\]$ \[${COLOR_NC}\]"  
 
 
 ###########################################################################
