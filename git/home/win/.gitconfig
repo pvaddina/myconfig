@@ -1,0 +1,55 @@
+[user]
+	name = Prakash Rao Vaddina
+	email = prakash.vaddina@gmail.com
+[push]
+	default = simple
+[core]
+	autocrlf = true
+	safecrlf = false
+	editor = 'c:/Program Files (x86)/Vim/vim80/gvim.exe'
+
+
+[color]
+    ui = true
+
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+
+[color "status"]
+    added = yellow
+    changed = cyan
+    untracked = red
+
+[credential]
+	helper = wincred
+
+
+[diff]
+	tool = gvimdiff
+[difftool]
+    prompt = false
+[difftool "kd3"]
+    cmd = 'c:/Program Files/KDiff3/kdiff3.exe' \"$LOCAL\" \"$REMOTE\"
+[difftool "gvimdiff"]
+    cmd = 'c:/Program Files (x86)/Vim/vim80/gvim.exe' \"$LOCAL\" \"$REMOTE\"
+
+
+[merge]
+	tool = 'c:/Program Files/KDiff3/kdiff3.exe'
+
+
+[alias]
+    d = difftool
+    mdgvim = config --global diff.tool gvimdiff
+    mdvim = config --global diff.tool vimdiff
+    mdkd = config --global diff.tool kd3
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset %C(bold blue)%<(25) %an%Creset %Cgreen%<(16)%cr%Creset %C(yellow)%d%Creset %<(100,trunc)%s' --abbrev-commit 
+
