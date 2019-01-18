@@ -1,4 +1,4 @@
-execute pathogen#infect()
+"execute pathogen#infect()
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -36,6 +36,18 @@ set hlsearch        " highligh searched text string
 "  \gvy?<C-R><C-R>=substitute(
 "  \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
 "  \gV:call setreg('"', old_reg, old_regtype)<CR>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""  Always turn on syntax highlighting
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+syntax on
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""  Always turn on incremental search
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set incsearch
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -92,12 +104,19 @@ set noundofile
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""   Color themes
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 0. Default 
+"-----------
+" Default dark color formats without any additional plugins. Both the following formats look the same 
+" to me on my installation 
+"colorscheme torte 
+colorscheme koehler
+
 " 1. Solarized
 " ------------
 " For lighter mode set 'background' to 'light'
 " For dark mode set 'background' to 'dark'
-"  For more info: https://github.com/altercation/vim-colors-solarized
-set background=dark
+" For more info: https://github.com/altercation/vim-colors-solarized
+"set background=dark
 "let g:solarized_termtrans=1
 "let g:solarized_termcolors=256
 "let g:solarized_contrast="high"
@@ -110,7 +129,6 @@ set background=dark
 "
 " 3. Dracula
 " ------------
-syntax on
 "colorscheme dracula
 "let g:dracula_italic = 1
 
@@ -134,4 +152,14 @@ syntax on
 
 "let NERDTreeShowBookmarks=1
 
+
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""   No error bells
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set noerrorbells visualbell t_vb= 
+if has('autocmd') 
+  autocmd GUIEnter * set visualbell t_vb= 
+endif
 
