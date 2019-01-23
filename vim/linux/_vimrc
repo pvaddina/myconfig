@@ -26,12 +26,12 @@ set hlsearch        " highligh searched text string
 " Version-2: NOT WORKING
 " This complex mapping should allow searching for the text using the
 " same key command as a single word. 
-"vnoremap <silent> * :<C-U>
+"vnoremap <silent> *Â :<C-U>
 "  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
 "  \gvy/<C-R><C-R>=substitute(
 "  \escape(@", '/\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
 "  \gV:call setreg('"', old_reg, old_regtype)<CR>
-"vnoremap <silent> # :<C-U>
+"vnoremap <silent> #Â :<C-U>
 "  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
 "  \gvy?<C-R><C-R>=substitute(
 "  \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
@@ -91,6 +91,14 @@ set noswapfile
 """""  Do not create any undo files (prevent creation of *.un~ files)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 set noundofile
+
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""   Browse last open buffers
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nmap <C-PageUp> :bnext<CR>
+nmap <C-PageDown> :bprevious<CR>
 
 
 
