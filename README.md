@@ -4,5 +4,5 @@ This repo primarily contains configurations that I like to use for editors(like 
 
 ### vim
 
-My favourite vimrc configuration. I love to just download this on the respective platform and use it. However the plugins still need to be installed manually.
+My favourite _vimrc configuration. I would just download the file, copy it under the HOME directory in windows and also under Linux and restart vim. The plugins, however still need to be installed manually.
 
