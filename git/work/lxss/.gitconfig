@@ -1,6 +1,6 @@
 [user]
 	name = Prakash Rao Vaddina
-	email = Prakash-Rao.Vaddina@rohde-schwarz.com
+	email = prakash.vaddina@gmail.com
 [push]
 	default = simple
 [core]
@@ -29,14 +29,8 @@
     untracked = red
 
 
-
-[http]
-	sslCAInfo = /mnt/c/Users/vaddina/certs/merged-ca-bundle-git-and-rs.crt
-	proxy = http://vaddina@proxy-emea.rsint.net:80
-
 [credential]
 	helper = cache --timeout=8553600
-
 
 [diff]
 	tool = gvimdiff
@@ -49,15 +43,11 @@
 [difftool]
     prompt = false
 
-
-
 [merge]
     tool = bc 
 
 [mergetool "bc"]
     path = "/mnt/c/Program Files/Beyond Compare 4/bcomp.exe"
-
-
 
 [alias]
     d = difftool
