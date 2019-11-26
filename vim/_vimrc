@@ -37,7 +37,10 @@ set noswapfile
 set noundofile
 
 
-
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""  Let backspace behave the way one would expect
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set backspace=indent,eol,start
 
 " Search for selected text, forwards or backwards.
 " THIS IS FINALLY REALIZED WITH A plugin "vsearch.vim"
