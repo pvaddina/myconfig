@@ -23,23 +23,18 @@
 	changed = cyan
 	untracked = red
 [http]
-	sslCAInfo = /media/sf_d/linux-share/merged-ca-bundle-git-and-rs.crt
 	proxy = http://vaddina@proxy-emea.rsint.net:80
 [credential]
 	helper = cache --timeout=8553600
 [diff]
 	tool = gvimdiff
 	guitool = kdiff3
-[difftool "bc"]
-	path = /mnt/c/Program Files/Beyond Compare 4/bcomp.exe
 [difftool "gvimdiff"]
 	cmd = /usr/bin/gvim -c 'set columns=200' -c 'wincmd =' -d$LOCAL$REMOTE
 [difftool]
 	prompt = false
 [merge]
 	tool = /usr/bin/gvim
-[mergetool "bc"]
-	path = /mnt/c/Program Files/Beyond Compare 4/bcomp.exe
 [alias]
 	d = difftool
 	mdbc = config --global diff.tool bc
